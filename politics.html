@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn: Indian Political Leaders</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0f172a; --bg2:#081028; --card:#1e293b;
+  --accent:#7af0c9; --accent2:#ffd166; --text-primary: #e6eef8; --text-secondary: #94a3b8;
+  --radius:14px;
+}
+body{
+  margin:0; font-family:'Inter', sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color: var(--text-primary); padding:16px;
+}
+.container {
+    width: 100%; max-width: 1200px; margin: auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: var(--radius);
+}
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--accent2);
+}
+.action-btn {
+    padding:10px 20px; border:none; border-radius:10px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#012; font-weight:700; cursor:pointer;
+    transition:0.2s; font-size: 1rem; text-decoration: none;
+}
+.action-btn:hover { transform: scale(1.05); }
+
+.section {
+    margin-bottom: 3rem;
+}
+.section h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.person-card {
+    background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.person-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    object-fit: cover;
+    margin-bottom: 1rem;
+    background-color: #334155;
+}
+.person-card h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+.person-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Indian Political Leaders</h1>
+        <div>
+            <a href="index.html" class="action-btn" style="background: #334155;">⬅️ Back to Hub</a>
+            <a href="politics_quiz.html" class="action-btn">Take Quiz 📝</a>
+        </div>
+    </div>
+
+    <!-- Presidents of India Section -->
+    <div class="section">
+        <h2>Presidents of India (Recent)</h2>
+        <div class="people-grid">
+            <div class="person-card">
+                <img src="https://ommcomnews.com/wp-content/uploads/2024/10/droupadi-murmu.jpg" alt="Droupadi Murmu" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Droupadi Murmu</h3>
+                <p>2022 - Present</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Ram_Nath_Kovind_official_portrait.jpg" alt="Ram Nath Kovind" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Ram Nath Kovind</h3>
+                <p>2017 - 2022</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pranab_Mukherjee_Portrait_%28cropped%29.jpg/960px-Pranab_Mukherjee_Portrait_%28cropped%29.jpg" alt="Pranab Mukherjee" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Pranab Mukherjee</h3>
+                <p>2012 - 2017</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/The_President_of_India%2C_Smt._Pratibha_Patil.jpg" alt="Pratibha Patil" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Pratibha Patil</h3>
+                <p>2007 - 2012</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/A._P._J._Abdul_Kalam.jpg/1015px-A._P._J._Abdul_Kalam.jpg" alt="A.P.J. Abdul Kalam" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>A.P.J. Abdul Kalam</h3>
+                <p>2002 - 2007</p>
+            </div>
+            <div class="person-card">
+                <img src="https://presidentofindia.nic.in/sites/default/files/2023-05/shri_k._r._narayanan.jpg" alt="K. R. Narayanan" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>K. R. Narayanan</h3>
+                <p>1997 - 2002</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Vice Presidents of India Section -->
+    <div class="section">
+        <h2>Vice Presidents of India (Recent)</h2>
+        <div class="people-grid">
+             <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDlhvIdVfUfMqhVDS_CwQxoxobu-4EbBVUA&s" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Jagdeep Dhankhar</h3>
+                <p>2022 - Present</p>
+            </div>
+             <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Venkaiah_Naidu_official_portrait.jpg" alt="Venkaiah Naidu" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Venkaiah Naidu</h3>
+                <p>2017 - 2022</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/The_Vice_President%2C_Shri_Shri_M._Hamid_Ansari_during_the_release_of_his_book_%E2%80%98Citizen_and_Society%E2%80%99_at_Rashtrapati_Bhavan_in_2016.jpg" alt="Mohammad Hamid Ansari" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>M. Hamid Ansari</h3>
+                <p>2007 - 2017</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/The_Vice_President_Shri_Bhairon_Singh_Shekhawat_in_a_Traditional_Rajasthani_Turban_during_a_book_release_function_in_New_Delhi_on_January_27%2C_2004.jpg" alt="Bhairon Singh Shekhawat" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Bhairon Singh Shekhawat</h3>
+                <p>2002 - 2007</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prime Ministers of India Section -->
+    <div class="section">
+        <h2>Prime Ministers of India (Recent)</h2>
+        <div class="people-grid">
+             <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEYEI5nU2R_FOfpmEBKHJW7TXrT7PKTdmtAw&s" alt="Narendra Modi" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Narendra Modi</h3>
+                <p>2014 - Present</p>
+            </div>
+             <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQREiRnJsAQp_BhMOaAtbkDb7Pmq4DqpRo3CA&s" alt="Manmohan Singh" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Manmohan Singh</h3>
+                <p>2004 - 2014</p>
+            </div>
+             <div class="person-card">
+                <img src="https://i.guim.co.uk/img/media/569e534e167bac81c902db69b6458cd4098c4521/0_904_2000_1199/master/2000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e6bdc00a707e4a7d32b3a95f8d754c43" alt="Atal Bihari Vajpayee" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Atal Bihari Vajpayee</h3>
+                <p>1998 - 2004</p>
+            </div>
+            <div class="person-card">
+                <img src="https://media.newindianexpress.com/TNIE%2Fimport%2F2012%2F11%2F30%2F17%2Foriginal%2FGujral_PTI.JPG?w=480&auto=format%2Ccompress&fit=max" alt="I. K. Gujral" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>I. K. Gujral</h3>
+                <p>1997 - 1998</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Key Cabinet Ministers Section -->
+    <div class="section">
+        <h2>Key Cabinet Ministers (As of late 2025)</h2>
+        <div class="people-grid">
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Shri_Amit_Shah_in_Raigad.jpg" alt="Amit Shah" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Amit Shah</h3>
+                <p>Minister of Home Affairs</p>
+            </div>
+            <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqJoEQ3R36Wr5I6o1vquVvHtFjInoZ3Li62Q&s" alt="Rajnath Singh" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Rajnath Singh</h3>
+                <p>Minister of Defence</p>
+            </div>
+            <div class="person-card">
+                <img src="https://s7d1.scene7.com/is/image/wbcollab/nirmala-sitharam?qlt=75&resMode=sharp2" alt="Nirmala Sitharaman" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Nirmala Sitharaman</h3>
+                <p>Minister of Finance</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/The_official_portrait_of_External_Minister_Subrahmanyam_Jaishankar.jpg/250px-The_official_portrait_of_External_Minister_Subrahmanyam_Jaishankar.jpg" alt="S. Jaishankar" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>S. Jaishankar</h3>
+                <p>Minister of External Affairs</p>
+            </div>
+             <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjSuo4YypGaW3jA8W-mEHkpicAwWV0f7zAvQ&s" alt="Dharmendra Pradhan" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Dharmendra Pradhan</h3>
+                <p>Minister of Education</p>
+            </div>
+             <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThMEYDmRxSUAghMEtuACMyeE9nAq8i-SUbDA&s" alt="Ashwini Vaishnaw" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Ashwini Vaishnaw</h3>
+                <p>Minister of Railways</p>
+            </div>
+             <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Arjun_Ram_Meghwal_2023_%28cropped%29.jpg" alt="Arjun Ram Meghwal" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Arjun Ram Meghwal</h3>
+                <p>Minister of Law and Justice</p>
+            </div>
+        </div>
+    </div>
+    
+     <!-- Heads of Important Bodies Section -->
+    <div class="section">
+        <h2>Heads of Important Bodies (As of late 2025)</h2>
+        <div class="people-grid">
+            <div class="person-card">
+                <img src="https://aorbrijeshgupta.com/wp-content/uploads/2022/08/Honble-Dr-Justice-D-Y-Chandrachud.jpg" alt="D.Y. Chandrachud" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>D.Y. Chandrachud</h3>
+                <p>Chief Justice of India</p>
+            </div>
+            <div class="person-card">
+                <img src="https://pbs.twimg.com/profile_images/1222104676281139200/LDm-1Khk_400x400.jpg" alt="Rajiv Kumar" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Rajiv Kumar</h3>
+                <p>Chief Election Commissioner</p>
+            </div>
+            <div class="person-card">
+                <img src="https://pbs.twimg.com/profile_images/1155153943652999169/MSr6_k3n_400x400.jpg" alt="Shaktikanta Das" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Shaktikanta Das</h3>
+                <p>Governor, RBI</p>
+            </div>
+            <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmZXta5TWSU22K69Y40V6sKand6UxNdZLOeQ&s" alt="Girish Chandra Murmu" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Girish Chandra Murmu</h3>
+                <p>Comptroller & Auditor General</p>
+            </div>
+             <div class="person-card">
+                <img src="https://media.assettype.com/barandbench%2F2023-04%2Fa2777b5c-3902-44e2-b1fb-c6d2fb21b280%2FBOMBAY__WEB_PAGE_1600x900_copy.jpg?w=480&auto=format%2Ccompress&fit=max" alt="R. Venkataramani" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>R. Venkataramani</h3>
+                <p>Attorney-General for India</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chief Ministers Section -->
+    <div class="section">
+        <h2>Chief Ministers of Indian States (As of late 2025)</h2>
+        <div class="people-grid">
+            <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8LLgPM73uYyeYM7qvzQHtIpVW75ZLYWVq4Q&s" alt="Yogi Adityanath" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Yogi Adityanath</h3>
+                <p>Uttar Pradesh</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/The_Chief_Minister_of_Tamil_Nadu%2C_Thiru_MK_Stalin.jpg" alt="M.K. Stalin" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>M. K. Stalin</h3>
+                <p>Tamil Nadu</p>
+            </div>
+            <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvT65-Ib5JX6T1soIcXc8qHmvX93GIRrzXZA&s" alt="Bhupendrabhai Patel" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Bhupendrabhai Patel</h3>
+                <p>Gujarat</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Official_portrait_of_Mamata_Banerjee.jpg" alt="Mamata Banerjee" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Mamata Banerjee</h3>
+                <p>West Bengal</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Arvind_Kejriwal_smiling.jpg" alt="Arvind Kejriwal" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Arvind Kejriwal</h3>
+                <p>Delhi</p>
+            </div>
+             <div class="person-card">
+                <img src="https://cdn.i.haymarketmedia.asia/?n=campaign-india%2Fcontent%2F20230406101454_shindesir.jpg&h=570&w=855&q=100&v=20250320&c=1" alt="Eknath Shinde" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Eknath Shinde</h3>
+                <p>Maharashtra</p>
+            </div>
+            <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw1fDgBew4vy-jenJVs4B4xMKzapXkhQeCLA&s" alt="Bhajan Lal Sharma" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Bhajan Lal Sharma</h3>
+                <p>Rajasthan</p>
+            </div>
+             <div class="person-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQGuFk7Upyf0hg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1703667574744?e=2147483647&v=beta&t=jOFkJ4QUQ4HE6AgRcZ3nG_pBtFjWzu_RxlUCbpos9lk" alt="Mohan Yadav" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Mohan Yadav</h3>
+                <p>Madhya Pradesh</p>
+            </div>
+             <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Siddaramaiah_at_the_function_to_commemorate_the_serving_of_2_billion_meals_of_the_Akshaya_Patra_Foundation_in_Karnataka_%28cropped%29.jpg/250px-Siddaramaiah_at_the_function_to_commemorate_the_serving_of_2_billion_meals_of_the_Akshaya_Patra_Foundation_in_Karnataka_%28cropped%29.jpg" alt="Siddaramaiah" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Siddaramaiah</h3>
+                <p>Karnataka</p>
+            </div>
+            <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Chief_Minister_Pinarayi_Vijayan_2023.tif/lossy-page1-800px-Chief_Minister_Pinarayi_Vijayan_2023.tif.jpg" alt="Pinarayi Vijayan" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Pinarayi Vijayan</h3>
+                <p>Kerala</p>
+            </div>
+            <div class="person-card">
+                <img src="https://pbs.twimg.com/profile_images/1661933747271524352/RpQ2zGnQ_400x400.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>N. Chandrababu Naidu</h3>
+                <p>Andhra Pradesh</p>
+            </div>
+            <div class="person-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrunOI1t8Icpml6d0PthEiHznWkDRK7j7qEg&s" alt="Nitish Kumar" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Nitish Kumar</h3>
+                <p>Bihar</p>
+            </div>
+            <div class="person-card">
+                <img src="https://aamaadmiparty.org/wp-content/uploads/2024/02/aap2-1.webp" alt="Bhagwant Mann" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Bhagwant Mann</h3>
+                <p>Punjab</p>
+            </div>
+             <div class="person-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Mohan_Charan_Majhi_%282024_Image%29.jpg" alt="Mohan Charan Majhi" onerror="this.onerror=null;this.src='https://placehold.co/120x120/222/FFF?text=Image';">
+                <h3>Mohan Charan Majhi</h3>
+                <p>Odisha</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+

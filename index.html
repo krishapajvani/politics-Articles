@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indian Politics & Constitution Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0f172a; --bg2:#081028; --card:#1e293b;
+  --accent:#7af0c9; --accent2:#ffd166; --text-primary: #e6eef8; --text-secondary: #94a3b8;
+  --radius:14px;
+}
+body{
+  margin:0; font-family:'Inter', sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color: var(--text-primary); padding:16px; display: flex;
+  align-items: center; justify-content: center; min-height: 100vh;
+}
+.container {
+    width: 100%; max-width: 900px; margin: auto;
+    text-align: center;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 1rem;
+}
+h1 span {
+    background: -webkit-linear-gradient(45deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.option-card {
+    background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+.option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(2,6,23,0.7);
+}
+.option-card h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+.option-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+.primary-btn {
+    display: inline-block;
+    padding: 12px 24px; border:none; border-radius:12px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#012; font-weight:700; cursor:pointer;
+    transition:0.2s; font-size: 1rem; text-decoration: none;
+}
+.primary-btn:hover { transform: scale(1.05); }
+
+@media (min-width: 768px) {
+    .options-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    h1 { font-size: 3.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Prepare for Glory<span>.</span></h1>
+    <p class="subtitle">Your ultimate guide to the Indian Constitution and Political Landscape. Choose a topic to begin your mastery.</p>
+    
+    <div class="options-grid">
+        <a href="politics.html" class="option-card">
+            <h2>Indian Politics</h2>
+            <p>Explore the profiles of Presidents, Prime Ministers, and key ministers. Essential static GK for all competitive exams.</p>
+            <div class="primary-btn">Learn Politics →</div>
+        </a>
+        
+        <div class="option-card">
+            <h2>Constitution Articles</h2>
+            <p>Master the crucial articles of the Indian Constitution. A must-know section for civil services and other government exams.</p>
+            <a href="article.html" class="primary-btn">Learn Articles →</a>
+                    </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiz - Indian Constitution Articles</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0f172a; --bg2:#081028; --card:#071730;
+  --accent:#7af0c9; --accent2:#ffd166; --muted:#9fd8ff66; --text-primary: #e6eef8;
+  --correct: #2ecc71; --incorrect: #e74c3c;
+  --radius:14px;
+}
+body{
+  margin:0; font-family:'Inter', sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color: var(--text-primary); padding:16px; display: flex;
+  align-items: center; justify-content: center; min-height: 100vh;
+}
+.wrap{
+  width: 100%; max-width:700px; margin:auto;
+  position: relative; z-index: 2;
+}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));
+  padding:24px; border-radius:var(--radius);
+  box-shadow:0 10px 40px rgba(2,6,23,0.6);
+  text-align: center;
+}
+.quiz-header{
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
+    flex-wrap: wrap; gap: 10px;
+}
+.header-item {
+    background: #021428; padding: 8px 12px; border-radius: 8px;
+    font-weight: 600; font-size: 14px;
+}
+.action-btn {
+    padding:8px 12px; border:none; border-radius:8px;
+    color:#012; font-weight:700; cursor:pointer; transition:0.2s;
+}
+.action-btn:hover { transform:scale(1.05); }
+.back-btn { background: linear-gradient(90deg, #a78bfa, #60a5fa); }
+.quit-btn { background: linear-gradient(90deg, #f78ca0, #f9748f); }
+
+#progress-bar-container {
+    width: 100%; background-color: rgba(0,0,0,0.2);
+    border-radius: 10px; height: 10px; margin-bottom: 20px;
+}
+#progress-bar {
+    height: 100%; width: 0%; background: linear-gradient(90deg,var(--accent),var(--accent2));
+    border-radius: 10px; transition: width 0.3s ease;
+}
+#question-container {
+    margin-bottom: 20px; text-align: left;
+}
+#question-text {
+    font-size: 20px; font-weight: 600; line-height: 1.5;
+}
+#options-container {
+    display: grid; grid-template-columns: 1fr; gap: 12px;
+}
+.option-btn {
+    width: 100%; padding: 14px; background-color: rgba(2, 20, 40, 0.5);
+    border: 2px solid rgba(255,255,255,0.1); color: var(--text-primary);
+    text-align: left; font-size: 16px; border-radius: 10px;
+    cursor: pointer; transition: all 0.2s ease;
+}
+.option-btn:hover:not(:disabled) {
+    background-color: rgba(122, 240, 201, 0.1); border-color: var(--accent);
+}
+.option-btn.correct { background-color: var(--correct); border-color: var(--correct); color: white; }
+.option-btn.incorrect { background-color: var(--incorrect); border-color: var(--incorrect); color: white; }
+.option-btn.timeout { border-color: var(--incorrect); }
+.option-btn:disabled { cursor: not-allowed; }
+
+#controls-container {
+    margin-top: 24px; text-align: right;
+}
+.primary-btn {
+    padding:12px 24px; border:none; border-radius:12px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    color:#012; font-weight:700; cursor:pointer; transition:0.2s; font-size: 16px;
+}
+.primary-btn:hover { transform: scale(1.05); }
+.primary-btn:disabled { background: #555; cursor: not-allowed; }
+
+#start-screen h1, #end-screen h2 { font-size: 28px; color: var(--accent2); margin-bottom: 8px;}
+#start-screen p, #end-screen p { font-size: 18px; margin: 16px 0; line-height: 1.6;}
+#final-stats { font-size: 22px; font-weight: bold; margin: 24px 0; color: var(--text-primary);}
+
+@media (min-width: 600px) {
+    #options-container { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+    
+    <div id="start-screen">
+        <h1>Indian Constitution Quiz</h1>
+        <p>Test your knowledge of the key articles of the Indian Constitution. You will have <strong>20 seconds</strong> for each question. Good luck!</p>
+        <button class="primary-btn" id="start-btn">🚀 Start Quiz</button>
+    </div>
+
+    <div id="quiz-screen" style="display:none;">
+      <div class="quiz-header">
+        <button class="action-btn back-btn" onclick="location.href='article.html'">⬅️ Back</button>
+        <div id="score" class="header-item">Score: 0</div>
+        <div id="timer" class="header-item">Time: 20s</div>
+        <button class="action-btn quit-btn" id="quit-btn">⏹️ Quit</button>
+      </div>
+      <div id="progress-bar-container">
+          <div id="progress-bar"></div>
+      </div>
+      <div id="question-container">
+        <p id="question-text">Question text goes here...</p>
+      </div>
+      <div id="options-container"></div>
+      <div id="controls-container">
+        <button class="primary-btn" id="next-btn" style="display:none;">Next Question →</button>
+      </div>
+    </div>
+
+    <div id="end-screen" style="display:none;">
+      <h2 id="end-title">🎉 Quiz Complete! 🎉</h2>
+      <p id="final-stats">Your Score: 10/12 (83%)</p>
+      <p id="final-message">Well done!</p>
+      <button class="primary-btn" onclick="window.location.reload()">🔄 Restart Quiz</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const questions = [
+    { question: "Which article deals with the 'Right to Equality' before law?", options: ["Article 14", "Article 19", "Article 21", "Article 32"], answer: "Article 14" },
+    { question: "Fundamental Duties are mentioned in which article?", options: ["Article 51A", "Article 40", "Article 12", "Article 368"], answer: "Article 51A" },
+    { question: "Article 21A, added by the 86th Amendment, provides for:", options: ["Right to Education", "Right to Property", "Right to Information", "Right to Privacy"], answer: "Right to Education" },
+    { question: "The procedure for amending the Constitution is laid out in:", options: ["Article 368", "Article 1", "Article 110", "Article 352"], answer: "Article 368" },
+    { question: "Which article abolishes 'Untouchability'?", options: ["Article 17", "Article 18", "Article 16", "Article 15"], answer: "Article 17" },
+    { question: "Article 352 of the Indian Constitution deals with:", options: ["National Emergency", "President's Rule", "Financial Emergency", "Fundamental Rights"], answer: "National Emergency" },
+    { question: "The 'Right to Constitutional Remedies' is guaranteed under:", options: ["Article 32", "Article 226", "Article 14", "Article 21"], answer: "Article 32" },
+    { question: "Which article empowers the President to promulgate Ordinances?", options: ["Article 123", "Article 72", "Article 52", "Article 61"], answer: "Article 123" },
+    { question: "The establishment of the Election Commission is provided under:", options: ["Article 324", "Article 280", "Article 315", "Article 148"], answer: "Article 324" },
+    { question: "What does Article 40 of the Constitution advise the State to do?", options: ["Organise village panchayats", "Implement a Uniform Civil Code", "Protect the environment", "Provide free legal aid"], answer: "Organise village panchayats" },
+    { question: "The 'Right to Property' was removed from Fundamental Rights and made a legal right under which article?", options: ["Article 300A", "Article 31", "Article 19(1)(f)", "Article 301"], answer: "Article 300A" },
+    { question: "Which article pertains to the 'Finance Commission'?", options: ["Article 280", "Article 112", "Article 266", "Article 267"], answer: "Article 280" }
+];
+
+const QUESTION_TIME_SECONDS = 20;
+
+// Element references
+const startScreen = document.getElementById('start-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const endScreen = document.getElementById('end-screen');
+const startBtn = document.getElementById('start-btn');
+const quitBtn = document.getElementById('quit-btn');
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const nextBtn = document.getElementById('next-btn');
+const scoreDisplay = document.getElementById('score');
+const timerDisplay = document.getElementById('timer');
+const progressBar = document.getElementById('progress-bar');
+const endTitle = document.getElementById('end-title');
+const finalStatsText = document.getElementById('final-stats');
+const finalMessageText = document.getElementById('final-message');
+
+let shuffledQuestions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let timer;
+let timeLeft = QUESTION_TIME_SECONDS;
+
+// --- Event Listeners ---
+startBtn.addEventListener('click', startQuiz);
+quitBtn.addEventListener('click', () => endQuiz(true)); // Pass true to indicate user quit
+nextBtn.addEventListener('click', handleNextQuestion);
+
+// --- Core Functions ---
+function startQuiz() {
+    startScreen.style.display = 'none';
+    endScreen.style.display = 'none';
+    quizScreen.style.display = 'block';
+
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+    currentQuestionIndex = 0;
+    score = 0;
+    scoreDisplay.textContent = `Score: 0`;
+    
+    showQuestion();
+}
+
+function showQuestion() {
+    resetState();
+    const currentQuestion = shuffledQuestions[currentQuestionIndex];
+    questionText.textContent = `(${currentQuestionIndex + 1}/${shuffledQuestions.length}) ${currentQuestion.question}`;
+    
+    currentQuestion.options.forEach(option => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.classList.add('option-btn');
+        button.addEventListener('click', () => selectAnswer(button, currentQuestion.answer));
+        optionsContainer.appendChild(button);
+    });
+
+    updateProgressBar();
+    startTimer();
+}
+
+function handleNextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < shuffledQuestions.length) {
+        showQuestion();
+    } else {
+        endQuiz(false); // Quiz completed normally
+    }
+}
+
+function startTimer() {
+    clearInterval(timer);
+    timeLeft = QUESTION_TIME_SECONDS;
+    timerDisplay.textContent = `Time: ${timeLeft}s`;
+
+    timer = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = `Time: ${timeLeft}s`;
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            handleTimeout();
+        }
+    }, 1000);
+}
+
+function handleTimeout() {
+    const correctAnswer = shuffledQuestions[currentQuestionIndex].answer;
+    Array.from(optionsContainer.children).forEach(button => {
+        if (button.textContent === correctAnswer) {
+            button.classList.add('correct'); // Show the correct answer
+        }
+        button.classList.add('timeout');
+        button.disabled = true;
+    });
+    nextBtn.style.display = 'block';
+}
+
+function selectAnswer(selectedButton, correctAnswer) {
+    clearInterval(timer); // Stop the timer once an answer is selected
+    
+    const isCorrect = selectedButton.textContent === correctAnswer;
+    if (isCorrect) {
+        score++;
+        selectedButton.classList.add('correct');
+        scoreDisplay.textContent = `Score: ${score}`;
+    } else {
+        selectedButton.classList.add('incorrect');
+    }
+
+    // Disable all buttons and show the correct answer
+    Array.from(optionsContainer.children).forEach(button => {
+        if (button.textContent === correctAnswer) {
+            button.classList.add('correct');
+        }
+        button.disabled = true;
+    });
+
+    nextBtn.style.display = 'block';
+}
+
+function resetState() {
+    nextBtn.style.display = 'none';
+    while (optionsContainer.firstChild) {
+        optionsContainer.removeChild(optionsContainer.firstChild);
+    }
+}
+
+function updateProgressBar() {
+    const progressPercent = ((currentQuestionIndex) / shuffledQuestions.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+}
+
+function endQuiz(wasQuit) {
+    clearInterval(timer);
+    progressBar.style.width = '100%';
+    quizScreen.style.display = 'none';
+    endScreen.style.display = 'block';
+
+    const attemptedQuestions = wasQuit ? currentQuestionIndex : shuffledQuestions.length;
+    const totalQuestions = shuffledQuestions.length;
+    const percentage = attemptedQuestions > 0 ? Math.round((score / attemptedQuestions) * 100) : 0;
+    
+    if (wasQuit) {
+        endTitle.textContent = "✋ Game Stopped ✋";
+    } else {
+        endTitle.textContent = "🎉 Quiz Complete! 🎉";
+    }
+
+    finalStatsText.innerHTML = `
+        Correct: ${score} <br>
+        Incorrect: ${attemptedQuestions - score} <br>
+        Final Score: ${score} / ${totalQuestions} (${percentage}%)
+    `;
+    
+    if (percentage >= 80) {
+        finalMessageText.textContent = "Excellent work! You are a constitutional expert! 🎓";
+    } else if (percentage >= 50) {
+        finalMessageText.textContent = "Good job! A little more practice and you'll be an expert.";
+    } else {
+        finalMessageText.textContent = "Keep trying! Consistent effort is the key to mastery. 💪";
+    }
+}
+</script>
+</body>
+</html>

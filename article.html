@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn the Articles of the Indian Constitution</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{
+  --bg1:#0f172a; --bg2:#081028; --card:#071730;
+  --accent:#7af0c9; --accent2:#ffd166; --muted:#9fd8ff66; --text-primary: #e6eef8;
+  --radius:14px;
+}
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color: var(--text-primary);
+  padding:16px;
+  position: relative;
+}
+.wrap{
+  max-width:1100px;
+  margin:auto;
+  position: relative;
+  z-index: 2;
+}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));
+  padding:24px;
+  border-radius:var(--radius);
+  box-shadow:0 10px 40px rgba(2,6,23,0.6);
+}
+.controls-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:24px;
+}
+.search{
+  padding:10px 14px;
+  border-radius:10px;
+  background:#021428;
+  border:1px solid rgba(255,255,255,0.05);
+  color:inherit;
+  min-width:200px;
+  flex:1;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+.search:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent);
+    border-color: var(--accent);
+}
+.pagination{display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.page-btn{padding:7px 9px;border-radius:8px;background:transparent;border:1px solid var(--muted);cursor:pointer;color:#ffeaa7; transition: all 0.2s ease;}
+.page-btn:hover, .page-btn.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#012;transform:scale(1.05); border-color: transparent;}
+
+#tableInfo{font-size:13px;color:var(--muted);margin-top:16px; text-align: center;}
+.page-controls-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+/* NEW STYLES for attractive list */
+#articlesContainer {
+    margin-top: 20px;
+}
+.part-header {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent2);
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.part-header i {
+    color: var(--accent);
+}
+.article-card {
+    background-color: rgba(2, 20, 40, 0.5);
+    border-left: 4px solid var(--accent);
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+.article-card:hover {
+    transform: scale(1.02);
+    background-color: rgba(122, 240, 201, 0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--muted);
+}
+.article-number {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+.article-subject {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.back-btn{
+  margin-bottom:12px;
+  padding:10px 16px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#012;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.2s;
+}
+.back-btn:hover{transform:scale(1.05); box-shadow:0 6px 18px rgba(0,0,0,0.4);}
+@media(max-width:600px){
+  .mini-logo{width:36px;height:36px;}
+  th,td{padding:6px 8px;font-size:12px;}
+  .search{min-width:120px;}
+}
+
+
+/* Background Animation */
+.bg-circle {
+  position: fixed; border-radius: 50%; opacity: 0.1; animation: float 15s infinite linear; z-index: 1;
+}
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-50px) rotate(180deg); } 100% { transform: translateY(0px) rotate(360deg); }
+}
+
+@media(max-width:600px){
+  .card { padding: 16px; }
+  .controls-row { flex-direction: column; align-items: stretch; }
+  .search{min-width:120px;}
+  .part-header { font-size: 18px; }
+  .article-card { padding: 12px; }
+  .article-number { font-size: 16px; }
+  .article-subject { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h2 style="text-align:center; margin-top:0;">🇮🇳 Articles of the Indian Constitution</h2>
+    <div class="controls-row">
+<button class="back-btn" onclick="location.href='index.html'"> Dashboad </button>
+
+    <button class="back-btn" onclick="location.href='constitution_articles.html'">📝 Take Quiz</button>
+
+      <input id="searchInput" class="search" placeholder="Search by article number, part, or subject..." />
+        <div class="pagination" id="pagination"></div>
+        </div>
+    
+    <div id="articlesContainer">
+      </div>
+    
+    
+    <div id="tableInfo"></div>
+</div>
+</div>
+
+<script>
+/********* Articles Data *********/
+const partIcons = {
+    "Part I": "fa-solid fa-map-marker-alt",
+    "Part II": "fa-solid fa-user-check",
+    "Part III": "fa-solid fa-shield-halved",
+    "Part IV": "fa-solid fa-lightbulb",
+    "Part IV-A": "fa-solid fa-hands-helping",
+    "Part V": "fa-solid fa-landmark",
+    "Part VI": "fa-solid fa-building-columns",
+    "Part VIII": "fa-solid fa-map",
+    "Part IX": "fa-solid fa-users",
+    "Part IX-A": "fa-solid fa-city",
+    "Part XI": "fa-solid fa-link",
+    "Part XII": "fa-solid fa-wallet",
+    "Part XIV": "fa-solid fa-briefcase",
+    "Part XV": "fa-solid fa-check-to-slot",
+    "Part XVI": "fa-solid fa-star",
+    "Part XVII": "fa-solid fa-language",
+    "Part XVIII": "fa-solid fa-triangle-exclamation",
+    "Part XX": "fa-solid fa-wrench",
+    "Part XXI": "fa-solid fa-clock-rotate-left",
+};
+
+const articles = [
+  { part: "Part I", articleNumber: "1", subjectMatter: "Name and territory of the Union" },
+  { part: "Part I", articleNumber: "2", subjectMatter: "Admission or establishment of new States" },
+  { part: "Part I", articleNumber: "3", subjectMatter: "Formation of new States and alteration of areas, boundaries or names of existing States" },
+  { part: "Part I", articleNumber: "4", subjectMatter: "Laws made under Articles 2 and 3 to provide for the amendment of the First and the Fourth Schedules" },
+  { part: "Part II", articleNumber: "5", subjectMatter: "Citizenship at the commencement of the Constitution" },
+  { part: "Part II", articleNumber: "6", subjectMatter: "Rights of citizenship of certain persons who have migrated to India from Pakistan" },
+  { part: "Part II", articleNumber: "7", subjectMatter: "Rights of citizenship of certain migrants to Pakistan" },
+  { part: "Part II", articleNumber: "8", subjectMatter: "Rights of citizenship of certain persons of Indian origin residing outside India" },
+  { part: "Part II", articleNumber: "9", subjectMatter: "Persons voluntarily acquiring citizenship of a foreign State not to be citizens" },
+  { part: "Part II", articleNumber: "10", subjectMatter: "Continuance of the rights of citizenship" },
+  { part: "Part II", articleNumber: "11", subjectMatter: "Parliament to regulate the right of citizenship by law" },
+  { part: "Part III", articleNumber: "12", subjectMatter: "Definition of the State" },
+  { part: "Part III", articleNumber: "13", subjectMatter: "Laws inconsistent with or in derogation of the fundamental rights" },
+  { part: "Part III", articleNumber: "14", subjectMatter: "Right to Equality: Equality before law" },
+  { part: "Part III", articleNumber: "15", subjectMatter: "Right to Equality: Prohibition of discrimination on grounds of religion, race, caste, sex or place of birth" },
+  { part: "Part III", articleNumber: "16", subjectMatter: "Right to Equality: Equality of opportunity in matters of public employment" },
+  { part: "Part III", articleNumber: "17", subjectMatter: "Right to Equality: Abolition of Untouchability" },
+  { part: "Part III", articleNumber: "18", subjectMatter: "Right to Equality: Abolition of titles" },
+  { part: "Part III", articleNumber: "19", subjectMatter: "Right to Freedom: Protection of certain rights regarding freedom of speech, etc." },
+  { part: "Part III", articleNumber: "20", subjectMatter: "Right to Freedom: Protection in respect of conviction for offences" },
+  { part: "Part III", articleNumber: "21", subjectMatter: "Right to Freedom: Protection of life and personal liberty" },
+  { part: "Part III", articleNumber: "21A", subjectMatter: "Right to Education" },
+  { part: "Part III", articleNumber: "22", subjectMatter: "Right to Freedom: Protection against arrest and detention in certain cases" },
+  { part: "Part III", articleNumber: "23", subjectMatter: "Right against Exploitation: Prohibition of traffic in human beings and forced labour" },
+  { part: "Part III", articleNumber: "24", subjectMatter: "Right against Exploitation: Prohibition of employment of children in factories, etc." },
+  { part: "Part III", articleNumber: "25", subjectMatter: "Right to Freedom of Religion: Freedom of conscience and free profession, practice and propagation of religion" },
+  { part: "Part III", articleNumber: "26", subjectMatter: "Right to Freedom of Religion: Freedom to manage religious affairs" },
+  { part: "Part III", articleNumber: "27", subjectMatter: "Right to Freedom of Religion: Freedom as to payment of taxes for promotion of any particular religion" },
+  { part: "Part III", articleNumber: "28", subjectMatter: "Right to Freedom of Religion: Freedom as to attendance at religious instruction or religious worship" },
+  { part: "Part III", articleNumber: "29", subjectMatter: "Cultural and Educational Rights: Protection of interests of minorities" },
+  { part: "Part III", articleNumber: "30", subjectMatter: "Cultural and Educational Rights: Right of minorities to establish and administer educational institutions" },
+  { part: "Part III", articleNumber: "32", subjectMatter: "Right to Constitutional Remedies" },
+  { part: "Part IV", articleNumber: "36", subjectMatter: "Directive Principles: Definition of State" },
+  { part: "Part IV", articleNumber: "38", subjectMatter: "Directive Principles: State to secure a social order for the promotion of welfare of the people" },
+  { part: "Part IV", articleNumber: "39A", subjectMatter: "Directive Principles: Equal justice and free legal aid" },
+  { part: "Part IV", articleNumber: "40", subjectMatter: "Directive Principles: Organisation of village panchayats" },
+  { part: "Part IV", articleNumber: "44", subjectMatter: "Directive Principles: Uniform civil code for the citizens" },
+  { part: "Part IV", articleNumber: "48A", subjectMatter: "Directive Principles: Protection and improvement of environment and safeguarding of forests and wild life" },
+  { part: "Part IV", articleNumber: "50", subjectMatter: "Directive Principles: Separation of judiciary from executive" },
+  { part: "Part IV", articleNumber: "51", subjectMatter: "Directive Principles: Promotion of international peace and security" },
+  { part: "Part IV-A", articleNumber: "51A", subjectMatter: "Fundamental duties" },
+  { part: "Part V", articleNumber: "52", subjectMatter: "The Union: The President of India" },
+  { part: "Part V", articleNumber: "61", subjectMatter: "The Union: Procedure for impeachment of the President" },
+  { part: "Part V", articleNumber: "72", subjectMatter: "The Union: Power of President to grant pardons, etc." },
+  { part: "Part V", articleNumber: "76", subjectMatter: "The Union: Attorney-General for India" },
+  { part: "Part V", articleNumber: "110", subjectMatter: "The Union: Definition of 'Money Bills'" },
+  { part: "Part V", articleNumber: "112", subjectMatter: "The Union: Annual financial statement (Budget)" },
+  { part: "Part V", articleNumber: "123", subjectMatter: "The Union: Power of President to promulgate Ordinances" },
+  { part: "Part V", articleNumber: "124", subjectMatter: "The Union: Establishment and constitution of Supreme Court" },
+  { part: "Part V", articleNumber: "148", subjectMatter: "The Union: Comptroller and Auditor-General of India" },
+  { part: "Part VI", articleNumber: "153", subjectMatter: "The States: Governors of States" },
+  { part: "Part VI", articleNumber: "165", subjectMatter: "The States: Advocate-General for the State" },
+  { part: "Part VI", articleNumber: "213", subjectMatter: "The States: Power of Governor to promulgate Ordinances" },
+  { part: "Part VI", articleNumber: "226", subjectMatter: "The States: Power of High Courts to issue certain writs" },
+  { part: "Part VIII", articleNumber: "239AA", subjectMatter: "The Union Territories: Special provisions with respect to Delhi" },
+  { part: "Part IX", articleNumber: "243-243O", subjectMatter: "The Panchayats" },
+  { part: "Part IX-A", articleNumber: "243P-243ZG", subjectMatter: "The Municipalities" },
+  { part: "Part XI", articleNumber: "262", subjectMatter: "Relations between the Union and the States: Adjudication of disputes relating to waters of inter-State rivers" },
+  { part: "Part XII", articleNumber: "280", subjectMatter: "Finance, Property, Contracts and Suits: Finance Commission" },
+  { part: "Part XII", articleNumber: "300A", subjectMatter: "Finance, Property, Contracts and Suits: Right to property" },
+  { part: "Part XIV", articleNumber: "315", subjectMatter: "Services under the Union and the States: Public Service Commissions" },
+  { part: "Part XV", articleNumber: "324", subjectMatter: "Elections: Election Commission" },
+  { part: "Part XV", articleNumber: "326", subjectMatter: "Elections: Adult suffrage" },
+  { part: "Part XVII", articleNumber: "343", subjectMatter: "Official Language of the Union" },
+  { part: "Part XVIII", articleNumber: "352", subjectMatter: "Emergency Provisions: National Emergency" },
+  { part: "Part XVIII", articleNumber: "356", subjectMatter: "Emergency Provisions: President's Rule" },
+  { part: "Part XVIII", articleNumber: "360", subjectMatter: "Emergency Provisions: Financial Emergency" },
+  { part: "Part XX", articleNumber: "368", subjectMatter: "Amendment of the Constitution" },
+  { part: "Part XXI", articleNumber: "370", subjectMatter: "Temporary provisions with respect to the State of Jammu and Kashmir (Now abrogated/modified)" }
+];
+
+/********* Pagination & Search Logic *********/
+const rowsPerPage = 10;
+let currentPage = 1, filtered = articles.slice();
+const articlesContainer = document.getElementById('articlesContainer');
+const pagination = document.getElementById('pagination');
+const tableInfo = document.getElementById('tableInfo');
+const searchInput = document.getElementById('searchInput');
+
+function renderArticles(){
+  articlesContainer.innerHTML = '';
+  const start = (currentPage-1)*rowsPerPage;
+  const pageItems = filtered.slice(start, start+rowsPerPage);
+  
+  let currentPart = null;
+  pageItems.forEach((item, idx) => {
+    // Add Part Header if it's a new part
+    if (item.part !== currentPart) {
+      currentPart = item.part;
+      const iconClass = partIcons[currentPart] || 'fa-solid fa-gavel'; // Default icon
+      const header = document.createElement('h2');
+      header.className = 'part-header';
+      header.innerHTML = `<i class="${iconClass}"></i> ${currentPart}`;
+      articlesContainer.appendChild(header);
+    }
+    
+    // Create Article Card
+    const card = document.createElement('div');
+    card.className = 'article-card';
+    card.style.animationDelay = `${idx * 0.05}s`;
+    
+    card.innerHTML = `
+      <div class="article-header">
+        <span class="article-number">Article ${item.articleNumber}</span>
+      </div>
+      <p class="article-subject">${item.subjectMatter}</p>
+    `;
+    articlesContainer.appendChild(card);
+  });
+  
+  renderPagination();
+  updateTableInfo(start);
+}
+
+function renderPagination() {
+    const totalPages = Math.max(1, Math.ceil(filtered.length/rowsPerPage));
+    pagination.innerHTML = '';
+    pagination.appendChild(makePageBtn('«', ()=>{if(currentPage>1){currentPage--; renderArticles();}}));
+
+    for(let p=1; p<=totalPages; p++){
+      const btn = makePageBtn(p,()=>{currentPage=p;renderArticles();});
+      if(p === currentPage) btn.classList.add('active');
+      pagination.appendChild(btn);
+    }
+    pagination.appendChild(makePageBtn('»', ()=>{if(currentPage<totalPages){currentPage++;renderArticles();}}));
+}
+
+function updateTableInfo(start) {
+    const end = Math.min(filtered.length, start + rowsPerPage);
+    const startNum = filtered.length > 0 ? start + 1 : 0;
+    tableInfo.textContent = `Showing ${startNum}-${end} of ${filtered.length} key articles`;
+}
+
+function makePageBtn(label,onClick){ 
+    const b=document.createElement('button'); 
+    b.className='page-btn'; 
+    b.textContent=label; 
+    b.onclick=onClick; 
+    return b; 
+}
+
+searchInput.addEventListener('input', filterAndRender);
+
+function filterAndRender(){
+  const q = searchInput.value.trim().toLowerCase();
+  filtered = articles.filter(item => 
+    `article ${item.articleNumber}`.toLowerCase().includes(q) ||
+    item.part.toLowerCase().includes(q) ||
+    item.subjectMatter.toLowerCase().includes(q)
+  );
+  currentPage = 1;
+  renderArticles();
+}
+
+// Animated background circles
+for(let i=0;i<10;i++){
+  const circle=document.createElement('div');
+  circle.className='bg-circle';
+  const size=Math.random()*200+50;
+  circle.style.cssText = `width:${size}px; height:${size}px; left:${Math.random()*100}%; top:${Math.random()*100}%; background:${['#ffd166','#7af0c9','#60a5fa','#a78bfa','#ffb86b'][Math.floor(Math.random()*5)]}; animation-duration:${10+Math.random()*10}s;`;
+  document.body.appendChild(circle);
+}
+
+// Initial Render
+renderArticles();
+</script>
+</body>
+</html>
